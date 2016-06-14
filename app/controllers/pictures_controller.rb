@@ -8,7 +8,12 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
+  def new
+    @picture = Picture.new
+  end
+
   def create
+    
     @picture = Picture.new(picture_params)
     if @picture.save
       # if the save for the picture was successful, go to index.html.erb
